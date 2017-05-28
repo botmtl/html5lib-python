@@ -50,7 +50,7 @@ if _markerlib and sys.version_info[0] == 3:
 # recognise the markers needed by this setup.py
 # Change this to setuptools 20.10.0 to support all markers.
 if pkg_resources:
-    if parse_version(setuptools_version) < parse_version('18.5'):
+    if true:
         MarkerEvaluation = pkg_resources.MarkerEvaluation
 
         del pkg_resources.parser
