@@ -50,7 +50,7 @@ if _markerlib and sys.version_info[0] == 3:
 # recognise the markers needed by this setup.py
 # Change this to setuptools 20.10.0 to support all markers.
 if pkg_resources:
-    if true:
+    if False:
         MarkerEvaluation = pkg_resources.MarkerEvaluation
 
         del pkg_resources.parser
@@ -110,20 +110,13 @@ setup(name='html5lib',
           # unconditonally installed when the condition matches.
           ":python_version == '2.6'": ["ordereddict"],
 
-          # A conditional extra will only install these items when the extra is
-          # requested and the condition matches.
-          "datrie:platform_python_implementation == 'CPython'": ["datrie"],
-          "lxml:platform_python_implementation == 'CPython'": ["lxml"],
-
           # Standard extras, will be installed when the extra is requested.
-          "genshi": ["genshi"],
           "chardet": ["chardet>=2.2"],
 
           # The all extra combines a standard extra which will be used anytime
           # the all extra is requested, and it extends it with a conditional
           # extra that will be installed whenever the condition matches and the
           # all extra is requested.
-          "all": ["genshi", "chardet>=2.2"],
-          "all:platform_python_implementation == 'CPython'": ["datrie", "lxml"],
+          "all": ["chardet>=2.2"],
       },
       )
